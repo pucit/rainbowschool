@@ -1,0 +1,139 @@
+﻿@model School_Management_System.Models.family
+
+@{
+    ViewBag.Title = "NewFamily";
+}
+
+<h2>NewFamily</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>family</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.familyId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.familyId)
+            @Html.ValidationMessageFor(model => model.familyId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FatherName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FatherName)
+            @Html.ValidationMessageFor(model => model.FatherName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FatherNIC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FatherNIC)
+            @Html.ValidationMessageFor(model => model.FatherNIC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FatherEducation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FatherEducation)
+            @Html.ValidationMessageFor(model => model.FatherEducation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FatherIncome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FatherIncome)
+            @Html.ValidationMessageFor(model => model.FatherIncome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FatherOccupation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FatherOccupation)
+            @Html.ValidationMessageFor(model => model.FatherOccupation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherName)
+            @Html.ValidationMessageFor(model => model.MotherName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherNIC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherNIC)
+            @Html.ValidationMessageFor(model => model.MotherNIC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherEducation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherEducation)
+            @Html.ValidationMessageFor(model => model.MotherEducation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherIncome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherIncome)
+            @Html.ValidationMessageFor(model => model.MotherIncome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherOccupation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherOccupation)
+            @Html.ValidationMessageFor(model => model.MotherOccupation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Religion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Religion)
+            @Html.ValidationMessageFor(model => model.Religion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Caste)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Caste)
+            @Html.ValidationMessageFor(model => model.Caste)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nationality)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nationality)
+            @Html.ValidationMessageFor(model => model.Nationality)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<br />
+<br />
+<br />
+<a href="../Student/Index" style="color:red; font-size:20px;">  Back to ADMISSION MENU  </a>
+

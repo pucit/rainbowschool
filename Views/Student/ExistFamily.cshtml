@@ -1,0 +1,81 @@
+﻿@model IEnumerable<School_Management_System.Models.family>
+
+@{
+    ViewBag.Title = "ExistFamily";
+}
+
+<h2>Existing Families</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            familyId
+        </th>
+        <th>
+            FatherName
+        </th>
+        <th>
+            FatherNIC
+        </th>
+        <th>
+            FatherOccupation
+        </th>
+        <th>
+            MotherName
+        </th>
+        <th>
+            Religion
+        </th>
+        <th>
+            Caste
+        </th>
+        <th>
+            Nationality
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.familyId
+        </td>
+        <td>
+            @item.FatherName
+        </td>
+        <td>
+            @item.FatherNIC
+        </td>
+        <td>
+            @item.FatherOccupation
+        </td>
+        <td>
+            @item.MotherName
+        </td>       
+        <td>
+            @item.Religion
+        </td>
+        <td>
+            @item.Caste
+        </td>
+        <td>
+            @item.Nationality
+        </td>
+        
+        <td>
+            @Html.ActionLink("ADD Student", "Create", new { id=item.familyId }) |
+            @Html.ActionLink("DELETE Family", "Delete", new { id=item.familyId }) |
+            @Html.ActionLink("EDIT Family", "Edit", new { id=item.familyId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br />
+<br />
+<br />
+<a href="../Home/Index" style="color:red; font-size:20px;">  Back to HOME  </a>

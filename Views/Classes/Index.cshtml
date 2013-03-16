@@ -1,0 +1,39 @@
+﻿@model IEnumerable<School_Management_System.Models.@class>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>CLASSES</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+       <th>
+            classId
+       </th>
+        <th>
+            className
+        </th>
+         <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.classId
+        </td>
+        <td>
+            @item.className
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.classId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.classId })
+        </td>
+    </tr>
+}
+
+</table>
+

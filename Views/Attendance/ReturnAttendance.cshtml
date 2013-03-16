@@ -1,0 +1,84 @@
+﻿@using School_Management_System.Models
+
+
+<table>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th colspan="@ViewBag.daysList.Count">
+            Attendance
+        </th>
+    </tr>
+    <tr>
+        <td>
+            &nbsp
+        </td>
+        <td>
+            &nbsp
+        </td>
+        
+        @foreach (int day in ViewBag.daysList) { 
+            
+            <td>@day</td>
+        }
+            
+       
+    </tr>
+    @foreach (teacher t in ViewBag.teacherList)
+    { 
+        <tr>
+            <td>
+                @t.teacherId
+            </td>
+            <td>
+                @t.TeacherName
+            </td>
+            @{
+                List<attendance> AttendanceList = ViewBag.attendanceList;
+              List<attendance> attendanceListMinimizedByTeacher = AttendanceList.Where(att => att.teacherId == t.teacherId).ToList<attendance>();
+            }
+            @foreach (int i in ViewBag.daysList)
+            {
+                DateTime myObjectt = new DateTime(ViewBag.year, ViewBag.month, i);                
+
+                if (DateTime.Now.CompareTo(myObjectt) < 0)
+                {
+                    break;
+                }
+                
+                attendance attend = attendanceListMinimizedByTeacher.Where(att => att.AttendanceDate.Day == i && att.AttendanceDate.Month == ViewBag.month && att.AttendanceDate.Year == ViewBag.year).FirstOrDefault<attendance>();
+                if (attend != null)
+                {
+                    <td style="color:Green">
+                        @attend.IsPresent
+                    </td>
+                }
+                else 
+                {                     
+         
+                         DateTime myObject = new DateTime(ViewBag.year, ViewBag.month, i);
+                            if(myObject.DayOfWeek != DayOfWeek.Sunday)
+                            {
+                                <td style="color:Red">
+                                A
+                                </td>
+                            }
+                            else
+                            {
+                                <td style="color:Black">
+                                -
+                                </td>
+                            }
+                                
+                     
+                     
+                }
+
+            }
+        </tr>
+    }
+</table>

@@ -1,0 +1,141 @@
+﻿@model School_Management_System.Models.teacher
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>teacher</legend>
+
+        <div class="editor-label">
+            @Html.Label("Employee ID")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.teacherId)
+            @Html.ValidationMessageFor(model => model.teacherId)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Employee Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherName)
+            @Html.ValidationMessageFor(model => model.TeacherName)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Employee DOB")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherDOB)
+            FORMAT: MM/DD/YYYY HH:MM:SS PM|AM
+            @Html.ValidationMessageFor(model => model.TeacherDOB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JoinDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JoinDate)
+            FORMAT: MM/DD/YYYY HH:MM:SS PM|AM
+            @Html.ValidationMessageFor(model => model.JoinDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Employee Address")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherAddress)
+            @Html.ValidationMessageFor(model => model.TeacherAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telephone)
+            @Html.ValidationMessageFor(model => model.Telephone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CellPhone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CellPhone)
+            @Html.ValidationMessageFor(model => model.CellPhone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaritalStatus)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.MaritalStatus, new SelectList(@ViewBag.maritalList, "Text"), "-- Select Marital Status--")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Gender, new SelectList(@ViewBag.genderList, "Text"), "-- Select Gender--")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Designation)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Designation, new SelectList(@ViewBag.designationList, "Text"), "-- Select Designation--")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MonthlyTotal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MonthlyTotal)
+            @Html.ValidationMessageFor(model => model.MonthlyTotal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BasicSalary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BasicSalary)
+            @Html.ValidationMessageFor(model => model.BasicSalary)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PaymentMode)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.PaymentMode, new SelectList(@ViewBag.paymentList, "Text"), "-- Select Payment Mode--")
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Account_Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Account_Number)
+            @Html.ValidationMessageFor(model => model.Account_Number)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Status, new SelectList(@ViewBag.statusList, "Text"), "-- Select Status--")
+            '1' Active | '0' In-Active
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Employee Menu", "ViewTeacherMenu")
+</div>
+

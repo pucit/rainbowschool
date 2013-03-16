@@ -1,0 +1,30 @@
+﻿@model School_Management_System.Models.student           
+
+@{
+    ViewBag.Title = "ViewAll";
+}
+
+<h2>Select Active|Non-Active Status to View Students</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+    <legend>student</legend>
+            
+        <div class="editor-label">
+            @Html.Label("Students")
+        </div>
+        <div class="editor-field">
+             @Html.DropDownListFor(model => model.StudentStatus, new SelectList(@ViewBag.statusList, "Text"), "-- Select Status--")
+            '1' Active | '0' Non-Active
+        </div>
+        <p>
+            <input type="submit" value="Filter" />
+        </p>  
+    </fieldset>
+}
+
+<br />
+<br />
+<br />
+<a href="../StudentViewMenu" style="color:red; font-size:20px;">  Back to MANAGE STUDENTS  </a>

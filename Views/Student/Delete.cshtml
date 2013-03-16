@@ -1,0 +1,62 @@
+﻿@model School_Management_System.Models.family
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>family</legend>
+
+    <div class="display-label">familyId</div>
+    <div class="display-field">@Model.familyId</div>
+
+    <div class="display-label">FatherName</div>
+    <div class="display-field">@Model.FatherName</div>
+
+    <div class="display-label">FatherNIC</div>
+    <div class="display-field">@Model.FatherNIC</div>
+
+    <div class="display-label">FatherEducation</div>
+    <div class="display-field">@Model.FatherEducation</div>
+
+    <div class="display-label">FatherIncome</div>
+    <div class="display-field">@Model.FatherIncome</div>
+
+    <div class="display-label">FatherOccupation</div>
+    <div class="display-field">@Model.FatherOccupation</div>
+
+    <div class="display-label">MotherName</div>
+    <div class="display-field">@Model.MotherName</div>
+
+    <div class="display-label">MotherNIC</div>
+    <div class="display-field">@Model.MotherNIC</div>
+
+    <div class="display-label">MotherEducation</div>
+    <div class="display-field">@Model.MotherEducation</div>
+
+    <div class="display-label">MotherIncome</div>
+    <div class="display-field">@Model.MotherIncome</div>
+
+    <div class="display-label">MotherOccupation</div>
+    <div class="display-field">@Model.MotherOccupation</div>
+
+    <div class="display-label">Religion</div>
+    <div class="display-field">@Model.Religion</div>
+
+    <div class="display-label">Caste</div>
+    <div class="display-field">@Model.Caste</div>
+
+    <div class="display-label">Nationality</div>
+    <div class="display-field">@Model.Nationality</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
