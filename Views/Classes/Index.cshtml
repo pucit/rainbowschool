@@ -17,6 +17,12 @@
         <th>
             className
         </th>
+        <th>
+            class Fee English medium
+        </th>
+        <th>
+            class Fee Urdu medium
+        </th>
          <th></th>
     </tr>
 
@@ -29,8 +35,19 @@
             @item.className
         </td>
         <td>
+            @item.classFee
+        </td>
+
+        <td>
+            
+            @item.classFeeU
+        </td>
+
+        <td>
+            @Html.ActionLink("View Sections", "viewsection", new { id=item.classId }) |
             @Html.ActionLink("Edit", "Edit", new { id=item.classId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.classId })
+            
         </td>
     </tr>
 }

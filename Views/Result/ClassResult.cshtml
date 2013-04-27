@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "ClassResult";
+    School_Management_System.Models.schooldbEntities db = new School_Management_System.Models.schooldbEntities();
+
+    List<SelectListItem> Lss = new List<SelectListItem>();
+    var list1 = (from temp in db.classes select temp).ToList();
+    foreach (var item in list1)
+    {
+        Lss.Add(new SelectListItem() { Text = item.className, Value = item.classId.ToString() });
+    }
+    List<SelectListItem> Lsss = new List<SelectListItem>();
+    var list2 = (from temp in db.exams select temp).ToList();
+    foreach (var item in list2)
+    {
+        Lsss.Add(new SelectListItem() { Text = item.examName, Value = item.examId.ToString() });
+    }
+}
+
+<h2>Add Class Result</h2>
+@using (Html.BeginForm("AddClassResult", "Result", FormMethod.Post))
+{
+    <table>
+    <tr>
+        <td>@Html.Label("Exam Name")</td>
+        <td>@Html.DropDownList("examId",Lsss)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Class Name")</td>
+        <td>@Html.DropDownList("classId",Lss)</td>
+    </tr>
+    </table>
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+    
+    
+}

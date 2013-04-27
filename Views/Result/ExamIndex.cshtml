@@ -1,0 +1,37 @@
+﻿@model IEnumerable<School_Management_System.Models.exam>
+
+@{
+    ViewBag.Title = "ExamIndex";
+}
+
+<h2>ExamIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ExamCreate")
+</p>
+<table>
+    <tr>
+           <th>
+               Exam ID
+           </th>
+        <th>
+            Exam Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.examId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.examName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ExamEdit", new { id=item.examId })
+        </td>
+    </tr>
+}
+
+</table>

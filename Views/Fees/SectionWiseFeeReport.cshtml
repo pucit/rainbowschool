@@ -1,0 +1,38 @@
+﻿@model  School_Management_System.Models.MonthYearClassName
+
+@{
+    ViewBag.Title = "SectionWiseFeeReport";
+}
+
+<h2>Section Wise Fee Report</h2>
+@using (Html.BeginForm("SectionWiseFeeReportB", "Fees"))
+{
+    @Html.ValidationSummary(true)
+            <font color="black"> Select Class
+            </font>
+            <br /><br />
+            @Html.DropDownListFor(model => model.name, new List<SelectListItem> { 
+            new SelectListItem{ Selected = false, Text = "Nursery", Value = "Nursery"},
+            new SelectListItem{ Selected = false, Text = "Prep", Value = "Prep"},
+            new SelectListItem{ Selected = false, Text = "One", Value = "One"},
+            new SelectListItem{ Selected = false, Text = "Two", Value = "Two"},
+            new SelectListItem{ Selected = false, Text = "Three", Value = "Three"},
+            new SelectListItem{ Selected = false, Text = "Four", Value = "Four"},
+            new SelectListItem{ Selected = false, Text = "Five", Value = "Five"},
+            new SelectListItem{ Selected = false, Text = "Six", Value = "Six"},
+            new SelectListItem{ Selected = false, Text = "Seven", Value = "Seven"},
+            new SelectListItem{ Selected = false, Text = "Eight", Value = "Eight"},
+            new SelectListItem{ Selected = false, Text = "Nine", Value = "Nine"},
+            new SelectListItem{ Selected = false, Text = "Ten", Value = "Ten"},
+            })
+            <br /><br />
+    <p>
+        
+        <input type="submit" value="Submit" />
+    </p>
+}
+
+<br />
+<br />
+@Html.ActionLink("Back to Reports Menu", "Reports")
+

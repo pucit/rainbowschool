@@ -1,0 +1,58 @@
+﻿@model  School_Management_System.Models.MonthYearClassName
+
+@{
+    ViewBag.Title = "YearWiseFeeReport";
+}
+
+<h2>Year Wise Fee Report</h2>
+
+@using (Html.BeginForm("YearWiseFeeReportList", "Fees"))
+{
+    @Html.ValidationSummary(true)
+            <font color="black"> Select Class
+            </font>
+            <br />
+            @Html.DropDownListFor(model => model.name, new List<SelectListItem> { 
+            new SelectListItem{ Selected = false, Text = "Nursery", Value = "Nursery"},
+            new SelectListItem{ Selected = false, Text = "Prep", Value = "Prep"},
+            new SelectListItem{ Selected = false, Text = "One", Value = "One"},
+            new SelectListItem{ Selected = false, Text = "Two", Value = "Two"},
+            new SelectListItem{ Selected = false, Text = "Three", Value = "Three"},
+            new SelectListItem{ Selected = false, Text = "Four", Value = "Four"},
+            new SelectListItem{ Selected = false, Text = "Five", Value = "Five"},
+            new SelectListItem{ Selected = false, Text = "Six", Value = "Six"},
+            new SelectListItem{ Selected = false, Text = "Seven", Value = "Seven"},
+            new SelectListItem{ Selected = false, Text = "Eight", Value = "Eight"},
+            new SelectListItem{ Selected = false, Text = "Nine", Value = "Nine"},
+            new SelectListItem{ Selected = false, Text = "Ten", Value = "Ten"},
+            })
+           <br /><br />
+           <font color="black">Select Year</font>
+           <br />
+            @Html.DropDownListFor(model => model.year, new List<SelectListItem> {
+           new SelectListItem{ Selected = DateTime.Today.Year == 2012, Text = "2012", Value = "2012"}, 
+           new SelectListItem{ Selected = DateTime.Today.Year == 2013, Text = "2013", Value = "2013"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2014, Text = "2014", Value = "2014"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2015, Text = "2015", Value = "2015"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2016, Text = "2016", Value = "2016"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2017, Text = "2017", Value = "2017"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2018, Text = "2018", Value = "2018"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2019, Text = "2019", Value = "2019"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2020, Text = "2020", Value = "2020"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2021, Text = "2021", Value = "2021"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2022, Text = "2022", Value = "2022"},
+           new SelectListItem{ Selected = DateTime.Today.Year == 2023, Text = "2023", Value = "2023"},
+           })
+           
+    <br /><br />
+    <p>
+        
+        <input type="submit" value="View List" />
+    </p>
+}
+
+<br />
+<br />
+@Html.ActionLink("Back to Reports Menu", "Reports")
+
+

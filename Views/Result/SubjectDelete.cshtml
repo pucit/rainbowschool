@@ -1,0 +1,23 @@
+﻿@model School_Management_System.Models.subject
+
+@{
+    ViewBag.Title = "SubjectDelete";
+}
+
+<h2>SubjectDelete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>subject</legend>
+
+    <div class="display-label">subjectName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.subjectName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "SubjectClass";
+}
+
+<h2>SubjectClass</h2>
+@model List<SelectListItem>
+@Html.Label("Class ID")
+@using (Html.BeginForm("fillSubject","Result",FormMethod.Get))
+{
+    @Html.DropDownList("val",Model.AsEnumerable())
+    <input type="submit" value="View" />
+}

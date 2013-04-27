@@ -6,7 +6,11 @@
 
 <h2>Search Results - Category Section</h2>
 
-
+@{
+    var girls = 0;
+    var boys = 0;
+    var sum = 0;
+    }
 <table>
     <tr>     
         <th>
@@ -69,6 +73,9 @@
             @item.StudentName
         </td>
         <td>
+        @{  if (item.StudentGender.Equals("Male")) { boys++; }
+        else { girls++; }
+            }
             @item.StudentGender
         </td>
         <td>
@@ -100,6 +107,17 @@
     }
 
 </table>
+
+<br/>
+    <h4>BOYS: &nbsp &nbsp &nbsp @boys <br /></h4>
+    <h4>GIRLS: &nbsp &nbsp &nbsp @girls <br /></h4>
+    @{
+        sum = boys + girls;
+            
+            }
+    <h4>TOTAL: &nbsp &nbsp &nbsp @sum <br /></h4>
+    <br/>
+
 <br />
 <br />
 <br />

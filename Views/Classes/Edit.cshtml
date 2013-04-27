@@ -30,6 +30,22 @@
             @Html.ValidationMessageFor(model => model.className)
         </div>
 
+        <div class="editor-label">
+            @Html.Label("Class Fee English Medium")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.classFee)
+            @Html.ValidationMessageFor(model => model.classFee)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Class Fee Urdu Medium")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.classFeeU)
+            @Html.ValidationMessageFor(model => model.classFeeU)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

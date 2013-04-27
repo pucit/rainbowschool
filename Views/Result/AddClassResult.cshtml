@@ -1,0 +1,78 @@
+﻿@model IEnumerable<School_Management_System.Models.result>
+@using School_Management_System.Models
+@{
+    School_Management_System.Models.schooldbEntities db = new School_Management_System.Models.schooldbEntities();
+    ViewBag.Title = "Add Class Result";
+    int exmId = Convert.ToInt32(ViewBag.exm);
+    int id = Convert.ToInt32(ViewBag.subject);
+    int cls = Convert.ToInt32(ViewBag.clas);
+    var obj = (from sub in db.class_subject where sub.classId == cls select sub).ToList<class_subject>();
+    School_Management_System.Models.exam obj1 = (from sub in db.exams where sub.examId == exmId select sub).FirstOrDefault<exam>();
+    School_Management_System.Models.@class obj2 = (from sub in db.classes where sub.classId == cls select sub).FirstOrDefault<@class>();
+    List<result> ListToBeReturned = new List<result>();
+    }
+
+<h2>Add Class Result</h2>
+@Html.BeginForm("saveClassResult","Result",FormMethod.Post)
+<table>
+    <tr>
+        <th>
+            Roll No.
+        </th>
+        <th>
+            Student Name
+        </th>
+        <th>
+            Class ID
+        </th>
+        <th>
+            Exam ID
+        </th>
+        <th>
+            Total Marks
+        </th>
+        @foreach(var item in obj){
+        <th>
+            @item.subject.subjectName
+        </th>
+        }
+    </tr>
+    
+        @foreach (student item in ViewBag.stdList ) { 
+            <tr>
+                <td>
+                    @Html.Label(item.StudentRollNumber.ToString())
+                </td>
+                <td>
+                    @Html.Label(item.StudentName)
+                    
+                </td>
+                <td>
+                    @Html.Label(@obj2.className)
+                    
+                </td>
+                <td>
+                    @Html.Label(@obj1.examName)
+                    
+                </td>
+                <td>
+                    
+                </td>
+                @foreach (class_subject item1 in obj){
+                <td>
+                    <input type="text" name="@item.studentId;@obj1.examId;@item1.subjectId;@item1.classId;"/>    
+                </td>
+                    }
+            </tr>
+        }
+
+</table>
+            <p>
+                <input type="submit" value="Submit" />
+            </p>
+       @{Html.EndForm();} 
+
+       <br />
+<br />
+<br />
+<a href="../Home/Index" style="color:red; font-size:20px;">  Back to HOME  </a>
