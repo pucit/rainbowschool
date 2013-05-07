@@ -34,15 +34,16 @@
             @{
     List<SelectListItem> list = new List<SelectListItem>();
     SelectListItem sl1 = new SelectListItem();
-    if (Model.isPresent.Equals("P")) { sl1.Selected = true; }
+    if (!Model.isPresent.Equals("Holiday") && !Model.isPresent.Equals("Leave")) 
+    { sl1.Selected = true; }
     sl1.Text = "P";
     list.Add(sl1);
     SelectListItem sl2 = new SelectListItem();
-    if (Model.isPresent.Equals("H")) { sl2.Selected = true; }
+    if (Model.isPresent.Equals("Holiday")) { sl2.Selected = true; }
     sl2.Text = "H";
     list.Add(sl2);
     SelectListItem sl3 = new SelectListItem();
-    if (Model.isPresent.Equals("L")) { sl3.Selected = true; }
+    if (Model.isPresent.Equals("Leave")) { sl3.Selected = true; }
     sl3.Text = "L";
     list.Add(sl3);
             }

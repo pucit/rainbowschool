@@ -1,4 +1,10 @@
 ﻿@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+@{
     School_Management_System.Models.schooldbEntities db = new School_Management_System.Models.schooldbEntities();
 
     ViewBag.Title = "selectClass";
@@ -24,6 +30,7 @@
 }
 
 <h2>selectClass</h2>
+<br /><br />
 @using (Html.BeginForm("classReport","Result",FormMethod.Post)) {
  <table>
      <tr>
@@ -39,6 +46,7 @@
         <td>@Html.DropDownList("subjectId",Ls)</td>
      </tr>
 </table>
+    <br /><br />
     <p>
         <input type="submit" value="Submit" />
     </p>

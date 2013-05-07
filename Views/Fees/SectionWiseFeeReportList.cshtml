@@ -1,5 +1,14 @@
 ﻿@model IEnumerable< School_Management_System.Models.fee>
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "SectionWiseFeeReportList";
 }
@@ -38,7 +47,7 @@ Month: &nbsp&nbsp&nbsp&nbsp @ViewBag.month &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&n
     if (item == null) { continue; }
     <tr>
         <td>
-            @item.student.sectionId
+            @item.student.studentId
         </td>
         <td>
             @item.student.StudentName

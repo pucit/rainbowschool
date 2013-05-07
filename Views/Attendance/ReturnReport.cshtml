@@ -51,56 +51,23 @@
                     {
                         absent++;
                     }
-                    else if (a.IsPresent.Equals("L")){
+                    else if (a.IsPresent.Equals("L"))
+                    {
                         leave++;
                     }
-                    else if (dt.DayOfWeek == DayOfWeek.Friday)
+                    else if(a.IsPresent.Equals("Double Late"))
                     {
-
-                        try
-                        {
-                            double diff = a.AttendanceDate.TimeOfDay.TotalMinutes - fridayTiming.TimeIn.Value.TotalMinutes;
-                            if (diff > 0 && diff < 15)
-                            {
-                                late++;
-                            }
-                            if (diff >= 15 && diff < 30)
-                            {
-                                late = late + 2;
-                            }
-                            if (diff >= 30)
-                            {
-                                halfDay++;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                        }
-
+                        late += 2;
                     }
-                    else
+                    else if(a.IsPresent.Equals("Late"))
                     {
-
-                        try
-                        {
-                            double diff = a.AttendanceDate.TimeOfDay.TotalMinutes - otherTiming.TimeIn.Value.TotalMinutes;
-                            if (diff > 0 && diff < 15)
-                            {
-                                late++;
-                            }
-                            if (diff >= 15 && diff < 30)
-                            {
-                                late = late + 2;
-                            }
-                            if (diff >= 30)
-                            {
-                                halfDay++;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                        }
-                    }                                         
+                        late++;
+                    }
+                    else if(a.IsPresent.Equals("Half Day"))
+                    {
+                        halfDay++;
+                    }
+                                                      
                 }
             }
             catch(ArgumentOutOfRangeException ex)
@@ -135,8 +102,8 @@
                 teacher teach = ViewBag.teacher;
                 }
                 @absent
-                &nbsp * &nbsp @(teach.BasicSalary/30)
-                &nbsp = &nbsp  @(absent *  (teach.BasicSalary/30) * 2)
+                &nbsp * &nbsp @((int)teach.BasicSalary/30)
+                &nbsp = &nbsp  @((int)absent * (teach.BasicSalary / 30) * 2)
             </td>
         </tr>
         <tr>
@@ -148,8 +115,8 @@
             </td>
             <td>
                 @(late/4)
-                &nbsp * &nbsp @(teach.BasicSalary/30)
-                &nbsp = &nbsp @((late/4) *  (teach.BasicSalary/30))
+                &nbsp * &nbsp @((int)teach.BasicSalary / 30)
+                &nbsp = &nbsp @((int)(late / 4) * (teach.BasicSalary / 30))
             </td>
         </tr>
         <tr>
@@ -161,8 +128,8 @@
             </td>
             <td>
                 @leave
-                &nbsp * &nbsp @(teach.BasicSalary/30)
-                &nbsp = &nbsp @(leave *  (teach.BasicSalary/30))
+                &nbsp * &nbsp @((int)teach.BasicSalary / 30)
+                &nbsp = &nbsp @((int)leave * (teach.BasicSalary / 30))
             </td>
         </tr>
         <tr>
@@ -174,20 +141,28 @@
             </td>
             <td>
                 @halfDay
-                &nbsp * &nbsp @(teach.BasicSalary/30/2)
-                    &nbsp = &nbsp @(halfDay *  (teach.BasicSalary/30/2))
+                &nbsp * &nbsp @((int)teach.BasicSalary / 30 / 2)
+                    &nbsp = &nbsp @((int)halfDay * (teach.BasicSalary / 30 / 2))
             </td>
         </tr>
         <tr>
             <td colspan="4">
-                Total Deduction = @((halfDay * (teach.BasicSalary / 30 / 2)) + (leave * (teach.BasicSalary / 30)) + ((late / 4) * (teach.BasicSalary / 30)) + (absent * (teach.BasicSalary / 30) * 2))
+                Total Deduction = @((int)(halfDay * (teach.BasicSalary / 30 / 2)) + (leave * (teach.BasicSalary / 30)) + ((late / 4) * (teach.BasicSalary / 30)) + (absent * (teach.BasicSalary / 30) * 2))
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                @{
+                    double? payable = teach.BasicSalary - ((int)(halfDay * (teach.BasicSalary / 30 / 2)) + (leave * (teach.BasicSalary / 30)) + ((late / 4) * (teach.BasicSalary / 30)) + (absent * (teach.BasicSalary / 30) * 2));
+                     @:Amount Payable = @((int)payable)  
+                }
             </td>
         </tr>
         <tr>
             <td colspan="4">
                 @if (leave == 0 && absent == 0 && halfDay == 0 && late <= 1)
                 {
-                     @:Monthly Bonus = @(teach.BasicSalary / 30)  
+                     @:Monthly Bonus = @((int)teach.BasicSalary / 30)  
                 }
             </td>
         </tr>

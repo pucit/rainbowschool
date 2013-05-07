@@ -1,5 +1,14 @@
 ﻿@model School_Management_System.Models.@class
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "Delete";
 }
@@ -25,7 +34,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Delete" />
         @Html.ActionLink("Back to List", "Index")
     </p>
 }

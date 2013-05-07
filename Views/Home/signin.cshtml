@@ -1,98 +1,126 @@
-﻿    <nav>
-      <ul>
-        <li>@Html.ActionLink("Home","Index")</li>
-        <li>@Html.ActionLink("About","About")</li>
-        <li>@Html.ActionLink("Admissions","admissions1")</li>
-        <li>@Html.ActionLink("Contact","contact")</li>
-        <li>@Html.ActionLink("SignIn","signin")</li>
-        </ul>
-    </nav>
-  </header>
-</div>
-<!-- content -->
-<link rel="stylesheet" href="../../Content/style1.css" type="text/css">
-<div class="wrapper row2">
-  <div id="container" class="clear">
-    <!-- content body -->
-    &nbsp;  
-    <!-- main content -->
-    <div id="content1">
-      <!-- section 2 -->
-          <h1>Sign In</h1>
-          <div id="content">
-	
-		<form action="#" method="POST" id="login-form">
-		
-			<fieldset>
+﻿@model School_Management_System.Models.login
 
-				<p>
-					<label for="login-username">user Name</label>
-					<input type="text" id="login-username" class="round full-width-input" autofocus />
-				</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rainbow Grammar | The School System</title>
 
-				<p>
-					<label for="login-password">password</label>
-					<input type="password" id="login-password" class="round full-width-input" />
-				</p>
+<link REL="SHORTCUT ICON" HREF="http://starblazestudios.com/favicon.ico">
+
+<link href="../../css/style.css" type="text/css" rel="stylesheet" media="all" />
+
+
+<script type="text/javascript" src="../../scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="../../scripts/jquery.backgroundPosition.js"></script>
+<script type="text/javascript" src="../../scripts/script.js"></script>
+<script type="text/javascript" src="../../scripts/cufon-yui.js"></script>
+<script type="text/javascript"  src="../../scripts/SansationRegular_400.font.js"></script>
+<script type="text/javascript"  src="../../scripts/SansationLight_300.font.js"></script>
+
+<script type="text/javascript">
+    Cufon.replace('h1, h2 ,#portfolio-filter a', { hover: true, fontFamily: 'SansationLight' });
+    Cufon.replace('#topNav a,h3, h4', { hover: true, fontFamily: 'SansationRegular' });
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="container">
+			
+			
+			<!-- ## HEADER ## -->
+			
+			<div id="header" height="10">
+			<h1>Rainbow Grammar School </h1>
 				
-				<p>I've <a href="#">forgotten my password</a>.</p>
+				<ul id="topNav">
+					<li><a href="../Home/Index">HOME</a></li>
+					<li><a href="../Home/admission">ADMISSION</a></li>
+					<li><a href="../Home/about">ABOUT</a></li>
+					<li><a href="../Home/contact">CONTACT</a></li>
+				</ul>
+			</div><!-- end: header -->
 				
-				<a href="../Home/Index" class="button round blue image-right ic-right-arrow" style="font-size:medium">LOG IN</a>
+                <div id="signinform">
 
-			</fieldset>
+                @using (@Html.BeginForm("SchoolIndex", "Home"))
+                {
+                    <fieldset>
+                    
 
-			<br/>
-			<div class="information-box round">Just click on the "LOG IN" button to continue.</div>
+                @Html.Label("User Name")
+                <br/><br />
+                @Html.EditorFor(model => model.username)
+                
+                @Html.Label("Password")
+                <br /><br />
+                @Html.PasswordFor(model => model.password)
+                <br /><br />
 
-		</form>
+                <p>
+                <input type="submit" id="submit" value="SIGNIN" size="10px" />
+                </p>
+                
+
+                    </fieldset>
+
+                }
+                </div>
+
+
+			
+			<!-- ## INFORMATION ## -->
+			
+			<div id="info">
+							
+				<!-- WRITE YOUR TEXT HERE -->
+
+				
+			</div><!-- end: INFORMATION -->
+			
+			
+			
+			<!-- ## LINKS ## -->
+			
+			<!-- end: Bottom Links -->
+			
+		</div><!--end: container -->
 		
-	</div>
-			&emsp;  <br/>
-            &emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-    		&emsp;  <br/>
-   			&emsp;  <br/>
-			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-        	&emsp;  <br/>
-   			&emsp;  <br/>
-    		&emsp;  <br/>
-   			&emsp;  <br/>
-        
-          </div>
-     </div>
-</div>
+		<!-- ## FOOTER ## -->
+		
+		<div id="footer">
+			<div id="footerContainer">
+				<p>
+					Open to working with anyone on creatively challenging
+					projects anywhere in the world.<br />
+					
+					
+					
+					Software Solutions<br/><br/><br/>
+					Copyright &copy; 2013 - All Rights Reserved - <a href="https://www.facebook.com/chronosolutions" title="Chrono Solutions">Chrono Solutions</a>
+				</p>
+			</div><!-- end: Footer Container -->
+		</div><!-- end: footer -->
+			
+	</div><!--end: wrap -->
+
+</body>
+
+</html>
+
+<script src="../../Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#submit").click(function () {
+
+            if ($("#username").val() == "" || $("#password").val() == "")
+                return false;
+        });
+
+    });
+
+</script>

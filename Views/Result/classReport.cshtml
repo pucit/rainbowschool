@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<School_Management_System.Models.result>
 
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
 @{  
     ViewBag.Title = "Subject Wise Result Report";
     int totalStudents = 0;
@@ -8,7 +14,8 @@
     
  }
 <h2>Subject Wise Result Report</h2>
-
+<br />
+<br />
 <table>
     <tr>
         <th>
@@ -66,6 +73,7 @@
 }
     @{failStudent = totalStudents - passStudents;}
 </table>
+<br />
 <div>
                 <ul >
                    <li>Total Students: @totalStudents</li>
@@ -73,8 +81,3 @@
                     <li>Fail Students: @failStudent</li>
                 </ul>
 </div>
-
-<br />
-<br />
-<br />
-<a href="../Home/Index" style="color:red; font-size:20px;">  Back to HOME  </a>

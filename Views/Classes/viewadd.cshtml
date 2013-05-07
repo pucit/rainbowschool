@@ -1,5 +1,15 @@
 ﻿@model School_Management_System.Models.section
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
+
 @{
     ViewBag.Title = "viewadd";
 }
@@ -18,18 +28,19 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.sectionName)
         </div>
+        <br />
         <div class="editor-field">
-            @Html.EditorFor(model => model.sectionName)
-            @Html.ValidationMessageFor(model => model.sectionName)
+          @Html.DropDownListFor(model => model.sectionName, new SelectList(@ViewBag.sectionList, "Text"), "-- Select Section--")
         </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.classId)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.classId)
         </div>
-
+        <br /><br />
         <p>
             <input type="submit" value="Create" />
         </p>

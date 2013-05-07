@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<School_Management_System.Models.family>
-
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
 @{
     ViewBag.Title = "ExistFamily";
 }
 
 <h2>Existing Families</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<br /><br />
 <table>
     <tr>
         <th>
@@ -28,7 +29,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @item.familyId
@@ -47,9 +49,9 @@
       
         
         <td>
-            @Html.ActionLink("ADD Student", "Create", new { id=item.familyId }) |
-            @Html.ActionLink("DELETE Family", "Delete", new { id=item.familyId }) |
-            @Html.ActionLink("EDIT Family", "Edit", new { id=item.familyId })
+            @Html.ActionLink("ADD Student", "Create", new { id = item.familyId }) |
+            @Html.ActionLink("DELETE Family", "Delete", new { id = item.familyId }) |
+            @Html.ActionLink("EDIT Family", "Edit", new { id = item.familyId })
         </td>
     </tr>
 }

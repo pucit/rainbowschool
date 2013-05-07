@@ -1,10 +1,20 @@
 ﻿@model School_Management_System.Models.teacher
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
+<br /><br />
 
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -20,6 +30,7 @@
         <div class="editor-label">
             @Html.Label("Employee ID")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.teacherId)
             @Html.ValidationMessageFor(model => model.teacherId)
@@ -28,6 +39,7 @@
         <div class="editor-label">
             @Html.Label("Employee Name")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.TeacherName)
             @Html.ValidationMessageFor(model => model.TeacherName)
@@ -36,6 +48,7 @@
         <div class="editor-label">
             @Html.Label("Employee DOB")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.TeacherDOB)
            
@@ -45,6 +58,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.JoinDate)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.JoinDate)
          
@@ -54,6 +68,7 @@
         <div class="editor-label">
             @Html.Label("Employee Address")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.TeacherAddress)
             @Html.ValidationMessageFor(model => model.TeacherAddress)
@@ -62,6 +77,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Telephone)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.Telephone)
             @Html.ValidationMessageFor(model => model.Telephone)
@@ -70,6 +86,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.CellPhone)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.CellPhone)
             @Html.ValidationMessageFor(model => model.CellPhone)
@@ -78,6 +95,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.MaritalStatus)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.MaritalStatus, new SelectList(@ViewBag.maritalList, "Text"), "-- Select Marital Status--")
         </div>
@@ -85,6 +103,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Gender)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Gender, new SelectList(@ViewBag.genderList, "Text"), "-- Select Gender--")
         </div>
@@ -92,6 +111,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Designation)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Designation, new SelectList(@ViewBag.designationList, "Text"), "-- Select Designation--")
         </div>
@@ -101,6 +121,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.BasicSalary)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.BasicSalary)
             @Html.ValidationMessageFor(model => model.BasicSalary)
@@ -108,12 +129,14 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.PaymentMode)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.PaymentMode, new SelectList(@ViewBag.paymentList, "Text"), "-- Select Payment Mode--")
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Account_Number)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.Account_Number)
             @Html.ValidationMessageFor(model => model.Account_Number)
@@ -121,11 +144,12 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Status)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Status, new SelectList(@ViewBag.statusList, "Text"), "-- Select Status--")
             '1' Active | '0' In-Active
         </div>
-
+        <br /><br />
         <p>
             <input type="submit" value="Save" />
         </p>

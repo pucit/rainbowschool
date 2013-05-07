@@ -1,12 +1,20 @@
 ﻿@model IEnumerable<School_Management_System.Models.class_subject>
 
 @{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
+@{
     int idd = -1;
-    ViewBag.Title = "fillSubject";
+    ViewBag.Title = "Add Subject";
     idd = ViewBag.id;
 }
 
-<h2>fillSubject</h2>
+<h2>Add Subject</h2>
+<br /><br />
 <p>
     @Html.ActionLink("Create New", "subclassCreate", new {id=idd })
 </p>

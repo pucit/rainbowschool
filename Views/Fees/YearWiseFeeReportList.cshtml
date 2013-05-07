@@ -1,10 +1,21 @@
 ﻿@model  School_Management_System.Models.ReportStructure
+            @using School_Management_System.Models
+
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
 
 @{
     ViewBag.Title = "YearWiseFeeReportList";
 }
 
 <h2>Year Wise Fee Report List</h2>
+        
 
 <font color="blue">Class: &nbsp&nbsp&nbsp&nbsp @ViewBag.className &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     Year: &nbsp&nbsp&nbsp&nbsp @ViewBag.year

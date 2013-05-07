@@ -1,11 +1,17 @@
 ﻿@model IEnumerable<School_Management_System.Models.subject>
 
 @{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+@{
     ViewBag.Title = "SubjectIndex";
 }
 
 <h2>SubjectIndex</h2>
-
+<br /><br />
 <p>
     @Html.ActionLink("Create New", "SubjectCreate","Result")
 </p>

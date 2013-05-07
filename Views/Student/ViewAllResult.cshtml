@@ -1,10 +1,20 @@
 ﻿@model IEnumerable<School_Management_System.Models.student>
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "ViewAllResult";
 }
 
 <h2>Search Results - Category All Students</h2>
+<br /><br />
 
 @{
     var girls = 0;

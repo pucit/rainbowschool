@@ -1,5 +1,15 @@
 ﻿@model School_Management_System.Models.fee
 
+
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "Create";
 }
@@ -19,6 +29,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Month)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Month, new List<SelectListItem> { 
            new SelectListItem{ Selected = DateTime.Today.Month == 1, Text = "January", Value = "January"},
@@ -40,6 +51,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Year)
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Year, new List<SelectListItem> {
            new SelectListItem{ Selected = DateTime.Today.Year == 2012, Text = "2012", Value = "2012"}, 
@@ -67,12 +79,13 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Is_Paid)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.Is_Paid)
             @Html.ValidationMessageFor(model => model.Is_Paid)
             &nbsp &nbsp <font color="green">Check if fees have been paid otherwise remain it unchecked</font>
         </div>
-
+        <br /><br />
         <p>
             <input type="submit" value="Create" />
         </p>

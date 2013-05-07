@@ -1,10 +1,18 @@
 ﻿@model School_Management_System.Models.teacher           
 
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
 @{
     ViewBag.Title = "MaritalView";
 }
 
 <h2>Select Employee's Marital Status to Search</h2>
+<br /><br />
 
 @using (Html.BeginForm())
 {
@@ -14,9 +22,11 @@
         <div class="editor-label">
             @Html.Label("Marital Status")
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.MaritalStatus, new SelectList(@ViewBag.maritalList, "Text"), "-- Select Marital Status--")
         </div>
+        <br /><br />
         <p>
             <input type="submit" value="Filter" />
         </p>  

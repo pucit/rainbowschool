@@ -1,11 +1,21 @@
 ﻿@model  School_Management_System.Models.MonthYearClassName
 @using School_Management_System.Models
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "SectionWiseFeeReportB";
 }
 
 <h2>Section Wise Fee Report </h2>
+<br />
 <font color="blue">Class: &nbsp&nbsp&nbsp&nbsp @ViewBag.className</font>
 <br /> <br />
 @{

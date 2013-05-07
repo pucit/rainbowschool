@@ -1,11 +1,20 @@
 ﻿@model School_Management_System.Models.teacher           
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "GenderView";
 }
 
 <h2>Select Employee's Gender to Search</h2>
-
+<br /><br />
 @using (Html.BeginForm())
 {
     <fieldset>
@@ -14,9 +23,11 @@
         <div class="editor-label">
             @Html.Label("Employee Gender")
         </div>
+        <br />
         <div class="editor-field">
             @Html.DropDownListFor(model => model.Gender, new SelectList(@ViewBag.genderList, "Text"), "-- Select Gender--")
         </div>
+        <br /><br />
         <p>
             <input type="submit" value="Filter" />
         </p>  

@@ -1,5 +1,14 @@
 ﻿@model School_Management_System.Models.@class
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "Edit";
 }
@@ -17,6 +26,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.classId)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.classId)
             @Html.ValidationMessageFor(model => model.classId)
@@ -25,6 +35,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.className)
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.className)
             @Html.ValidationMessageFor(model => model.className)
@@ -33,6 +44,7 @@
         <div class="editor-label">
             @Html.Label("Class Fee English Medium")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.classFee)
             @Html.ValidationMessageFor(model => model.classFee)
@@ -41,11 +53,12 @@
         <div class="editor-label">
             @Html.Label("Class Fee Urdu Medium")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.classFeeU)
             @Html.ValidationMessageFor(model => model.classFeeU)
         </div>
-
+        <br /><br />
         <p>
             <input type="submit" value="Save" />
         </p>

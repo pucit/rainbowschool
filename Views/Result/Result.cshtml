@@ -1,4 +1,10 @@
 ﻿@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+@{
     ViewBag.Title = "Result";
     School_Management_System.Models.schooldbEntities db = new School_Management_System.Models.schooldbEntities();
     
@@ -23,21 +29,35 @@
 }
 
 <h2>Result</h2>
+<br /><br />
 @using (Html.BeginForm("addResult","Result",FormMethod.Post)) {
-    <table>
-    <tr>
-        <td>@Html.Label("Exam Name")</td>
-        <td>@Html.DropDownList("examId",Lsss)</td>
-    </tr>
-    <tr>
-        <td>@Html.Label("Subject Name")</td>
-        <td>@Html.DropDownList("subjectId",Ls)</td>
-    </tr>
-    <tr>
-        <td>@Html.Label("Class Name")</td>
-        <td>@Html.DropDownList("classId",Lss)</td>
-    </tr>
-    </table>
+
+    <div class="editor-label">
+        @Html.Label("Exam Name")
+        </div>
+    <br/><br/>
+    <div class="editor-field">
+        @Html.DropDownList("examId",Lsss)
+        </div>
+    <br/><br/>
+    <div class="editor-label">
+        @Html.Label("Subject Name")
+        </div>
+        <br /> <br/>
+    <div class="editor-field">
+        @Html.DropDownList("subjectId",Ls)
+        </div>
+    <br/><br/>
+    
+    <div class="editor-label">    
+        @Html.Label("Class Name")
+        </div>
+    <br/><br/>
+    <div class="editor-field">
+        @Html.DropDownList("classId",Lss)
+        </div>
+    
+    <br /><br />
     <p>
         <input type="submit" value="Submit" />
     </p>

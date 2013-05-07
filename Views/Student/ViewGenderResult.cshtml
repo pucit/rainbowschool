@@ -1,10 +1,20 @@
 ﻿@model IEnumerable<School_Management_System.Models.student>
 
+
+<link rel="stylesheet" href="../../Content/Site.css"type="text/css" />
+@{
+    
+    Layout = "../Shared/Layout_1.cshtml";
+    
+    }
+
+
 @{
     ViewBag.Title = "ViewGenderResult";
 }
 
 <h2>Search Results - Category Student Gender</h2>
+<br /><br />
 
 @{
     var girls = 0;
