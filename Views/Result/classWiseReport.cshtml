@@ -26,16 +26,22 @@
 <br /><br />
 @using (Html.BeginForm("classWiseReports", "Result", FormMethod.Post))
 {
-    <table>
-    <tr>
-        <td>@Html.Label("Exam Name")</td>
-        <td>@Html.DropDownList("examId",Lsss)</td>
-    </tr>
-    <tr>
-        <td>@Html.Label("Class Name")</td>
-        <td>@Html.DropDownList("classId",Lss)</td>
-    </tr>
-    </table>
+    <div class="editor-label">
+        @Html.Label("Exam Name")
+        </div>
+    <br/><br/>
+    <div class="editor-field">
+        @Html.DropDownList("examId",Lsss)
+        </div>
+    <br/><br/>
+    <div class="editor-label">    
+        @Html.Label("Class Name")
+        </div>
+    <br/><br/>
+    <div class="editor-field">
+        @Html.DropDownList("classId",Lss)
+        </div>
+    
     <br /><br />
     <p>
         <input type="submit" value="Submit" />

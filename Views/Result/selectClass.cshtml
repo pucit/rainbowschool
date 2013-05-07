@@ -32,20 +32,31 @@
 <h2>selectClass</h2>
 <br /><br />
 @using (Html.BeginForm("classReport","Result",FormMethod.Post)) {
- <table>
-     <tr>
-        <td>@Html.Label("Exame Name: ")</td>
-        <td>@Html.DropDownList("examId",Lsss)</td>
-     </tr>
-     <tr>
-        <td>@Html.Label("Class Name: ")</td>
-        <td>@Html.DropDownList("classId",Lss)</td>
-     </tr>
-     <tr>
-        <td>@Html.Label("Subject Name: ")</td>
-        <td>@Html.DropDownList("subjectId",Ls)</td>
-     </tr>
-</table>
+ 
+    <div class="editor-label">
+        @Html.Label("Exam Name: ")
+        </div>
+    <br/><br/>
+    <div class="editor-field">        
+        @Html.DropDownList("examId", Lsss)
+        </div>
+    <br /><br/>
+    <div class="editor-label">
+        @Html.Label("Class Name: ")
+        </div>
+    <br /><br/>
+    <div class="editor-field">        
+        @Html.DropDownList("classId",Lss)
+        </div>
+    <br/><br/>
+    <div class="editor-label">
+        @Html.Label("Subject Name: ")
+        </div>
+    <br/><br/>
+    <div class="editor-field">        
+        @Html.DropDownList("subjectId",Ls)
+        </div>
+ 
     <br /><br />
     <p>
         <input type="submit" value="Submit" />
